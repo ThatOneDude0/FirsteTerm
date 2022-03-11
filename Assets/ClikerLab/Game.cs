@@ -9,10 +9,6 @@ public class Game : MonoBehaviour
     public void Awake()
     {
         Intance = this;
-    }
-
-    private void Start()
-    {
         ResourceBank.ChangeResource(GameResource.HUMANS, GameConfig.Humans);
         ResourceBank.ChangeResource(GameResource.FOOD, GameConfig.Food);
         ResourceBank.ChangeResource(GameResource.WOOD, GameConfig.Wood);

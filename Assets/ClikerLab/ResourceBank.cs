@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 public class ResourceBank : MonoBehaviour
 {
-    private Dictionary<GameResource, int> _resources;
+    Dictionary<GameResource, int> resources;
 
     private void OnEnable()
     {
-        _resources = new Dictionary<GameResource, int>()
+        resources = new Dictionary<GameResource, int>()
         {
             [GameResource.HUMANS] = Game.Intance.GameConfig.Humans,
             [GameResource.FOOD] = Game.Intance.GameConfig.Food,
@@ -20,16 +20,23 @@ public class ResourceBank : MonoBehaviour
 
     public void ChangeResource(GameResource r, int v)
     {
-        v = Game.Intance.GameConfig.Value;
-        if (!_resources.ContainsKey(r))
+        if (!resources.ContainsKey(r))
         {
             throw new InvalidDataException();
-        } 
-        _resources[r] += v;
+        }
+
+        resources[r] += v;
     }
 
     public int GetResource(GameResource r)
     {
-        return _resources[r];
+        if (!resources.ContainsKey(r))
+        {
+            throw new InvalidDataException();
+        }
+
+        return resources[r];
+
     }
+
 }

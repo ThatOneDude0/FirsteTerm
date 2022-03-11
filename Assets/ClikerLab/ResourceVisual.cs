@@ -7,7 +7,7 @@ public class ResourceVisual : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _resourceText;
     [SerializeField] private ResourceBank _resourceBank;
 
-    private void Start()
+    void Awake()
     {
         _resourceBank = Game.Intance.ResourceBank;
         UpdateText(_resourceText);
