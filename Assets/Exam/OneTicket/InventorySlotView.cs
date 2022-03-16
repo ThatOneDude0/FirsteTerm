@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,6 +18,7 @@ public class InventorySlotView : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _rectTransform.position = _startPosition;
+        //_rectTransform.position = _startPosition;
+        _rectTransform.position = eventData.position;
     }
 }
