@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -69,4 +70,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IP
     {
         _image.raycastTarget = true;
     }
+
+    //public static implicit operator Item(Counter v)
+    //{
+    //    throw new NotImplementedException();
+    //}
 }
